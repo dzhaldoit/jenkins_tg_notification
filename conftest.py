@@ -49,6 +49,7 @@ def setup_browser(request):
     browser.config.driver = driver
 
     browser.config.base_url = 'https://github.com'
+    driver.maximize_window()
 
     yield browser
 
