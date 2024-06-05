@@ -4,7 +4,7 @@ import pytest
 from selenium import webdriver
 
 from dotenv import load_dotenv
-from selene.support.shared import browser
+from selene import browser
 from selenium.webdriver.chrome.options import Options
 
 from utils import attachments
@@ -49,7 +49,8 @@ def setup_browser(request):
     browser.config.driver = driver
 
     browser.config.base_url = 'https://demoqa.com'
-    driver.maximize_window()
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
 
     yield browser
 
